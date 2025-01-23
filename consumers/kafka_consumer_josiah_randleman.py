@@ -61,6 +61,16 @@ def process_message(message: str) -> None:
     """
     logger.info(f"Processing message: {message}")
 
+    # Define specific patterns to alert on
+    if message == "Life is good!":
+        logger.warning("ALERT: Detected the message 'Life is good!'")
+        logger.info("ALERT: Detected the message 'Life is good!'")
+    elif message == "Running is fun!":
+        logger.warning("ALERT: Detected the message 'Running is fun!'")
+        logger.info("ALERT: Detected the message 'Running is fun!'")
+    else:
+        logger.info(f"Message does not match any alert pattern: {message}")
+
 
 #####################################
 # Define main function for this module
